@@ -6,13 +6,12 @@ node ("maven") {
    }
    stage('Build') {
       // Run the maven build
-      if (isUnix()) {
-         sh "cd kafka-bench && mvn verify"
-         gatlingArchive()
-      } else {
-        fail() 
-      }
+      sh "mvn clean install"
     
    }
+ 
+   stage('Load Test') {
+     sh "cd kafka-bench && mvn verify"
+   } 
    
 }
