@@ -1,0 +1,11 @@
+kind: "BuildConfig"
+apiVersion: "v1"
+metadata:
+  name: "kafka-bench-pipeline"
+spec:
+  source:
+    git:
+      uri: "https://github.com/hbenmansour/openshift-jmeter-kafka.git"
+  strategy:
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: jenkinsfile
