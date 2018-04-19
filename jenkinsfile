@@ -1,0 +1,18 @@
+node ("maven") {
+   stage('Preparation') { // for display purposes
+      // Get some code from a GitHub repository
+      git 'https://github.com/hbenmansour/openshift-jmeter-kafka.git'
+               
+   }
+   stage('Build') {
+      // Run the maven build
+      if (isUnix()) {
+         sh "cd kafka-bench && mvn verify"
+         gatlingArchive()
+      } else {
+        fail() 
+      }
+    
+   }
+   
+}
