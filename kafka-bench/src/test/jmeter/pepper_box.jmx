@@ -417,7 +417,7 @@
       KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;String, String&gt;(props);
       
       consumer.subscribe(Arrays.asList(topic));
-      System.out.println(&quot;Subscribed to topic &quot; + topic);
+      System.out.println(&quot;Subscribed to topic &quot; + &quot;bench01&quot;);
 long t = System.currentTimeMillis();
   long end = t + 5000;
   f = new FileOutputStream(&quot;.\\data.csv&quot;, true);
