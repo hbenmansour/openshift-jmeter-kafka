@@ -13,5 +13,9 @@ node ("maven") {
    stage('Load Test') {
      sh "cd kafka-bench && mvn verify"
    } 
-   
+   post {
+        always {
+            archiveArtifacts artifacts: '**/*pepper-box.csv', fingerprint: true
+        }
+    }
 }
