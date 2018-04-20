@@ -27,7 +27,7 @@ stages {
    }
    post {
         always {
-            archiveArtifacts artifacts: '**/*pepper-box.csv', fingerprint: true
+            archiveArtifacts artifacts: '**/*.csv', fingerprint: true
         }
     }
 }
