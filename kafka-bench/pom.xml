@@ -25,7 +25,7 @@
 
 		<!-- pepper-box plugin for jmeter kafka extension -->
 		<dependency>
-			<groupId>com.amadeus.kafka</groupId>
+			<groupId>pepper-box</groupId>
 			<artifactId>pepper-box</artifactId>
 			<version>${project.version}</version>
 		</dependency>
