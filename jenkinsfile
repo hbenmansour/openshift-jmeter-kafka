@@ -5,17 +5,23 @@ label 'maven'
 stages {
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
+      steps {
       git 'https://github.com/hbenmansour/openshift-jmeter-kafka.git'
+      }
                
    }
    stage('Build') {
       // Run the maven build
+      steps {
       sh "mvn clean install -DskipTests"
+      }
     
    }
  
    stage('Load Test') {
+     steps {
      sh "cd kafka-bench && mvn verify"
+     }
    } 
    
    }
