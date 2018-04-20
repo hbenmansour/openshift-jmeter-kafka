@@ -1,5 +1,7 @@
 pipeline{
-agent maven
+agent {
+label 'maven' 
+}
 stages {
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
