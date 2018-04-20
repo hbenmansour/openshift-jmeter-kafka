@@ -28,6 +28,7 @@
 			<groupId>pepper-box</groupId>
 			<artifactId>pepper-box</artifactId>
 			<version>${project.version}</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -92,6 +93,11 @@
 						</goals>
 					</execution>
 				</executions>
+				<configuration>
+					<jmeterExtensions>
+						<jmeterExtension>pepper-box:pepper-box:${project.version}</jmeterExtension>
+					</jmeterExtensions>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -104,3 +110,4 @@
 		</plugins>
 	</reporting>
 </project>
+
