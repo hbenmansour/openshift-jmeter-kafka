@@ -1,4 +1,6 @@
-node ("maven") {
+pipeline{
+agent maven
+stages {
    stage('Preparation') { // for display purposes
       // Get some code from a GitHub repository
       git 'https://github.com/hbenmansour/openshift-jmeter-kafka.git'
@@ -13,6 +15,8 @@ node ("maven") {
    stage('Load Test') {
      sh "cd kafka-bench && mvn verify"
    } 
+   
+   }
    post {
         always {
             archiveArtifacts artifacts: '**/*pepper-box.csv', fingerprint: true
