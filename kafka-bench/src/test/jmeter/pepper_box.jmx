@@ -426,7 +426,7 @@ long t = System.currentTimeMillis();
   while (System.currentTimeMillis()&lt;end) 
   {
       org.apache.kafka.clients.consumer.ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);
-      for (ConsumerRecord&lt;String, String&gt; record : records)
+      for ( org.apache.kafka.clients.consumer.ConsumerRecord&lt;String, String&gt; record : records)
      {
          p.println( &quot;offset = &quot; + record.offset() +&quot; value = &quot; + record.value());
      }
