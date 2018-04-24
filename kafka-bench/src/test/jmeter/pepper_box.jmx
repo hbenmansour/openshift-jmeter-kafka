@@ -416,7 +416,7 @@
       props.put(&quot;value.deserializer&quot;, 
          &quot;org.apache.kafka.common.serialization.StringDeserializer&quot;);
       org.apache.kafka.clients.consumer.KafkaConsumer&lt;String, String&gt; consumer = new org.apache.kafka.clients.consumer.KafkaConsumer&lt;String, String&gt;(props);
-      
+      String topic = "bench01";
       consumer.subscribe(Arrays.asList(topic));
       System.out.println(&quot;Subscribed to topic &quot; + &quot;bench01&quot;);
 long t = System.currentTimeMillis();
