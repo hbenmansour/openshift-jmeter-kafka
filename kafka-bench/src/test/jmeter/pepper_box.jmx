@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <jmeterTestPlan version="1.2" properties="4.0" jmeter="4.0 r1823414">
   <hashTree>
@@ -414,7 +415,7 @@
          &quot;org.apache.kafka.common.serializa-tion.StringDeserializer&quot;);
       props.put(&quot;value.deserializer&quot;, 
          &quot;org.apache.kafka.common.serializa-tion.StringDeserializer&quot;);
-      KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;String, String&gt;(props);
+      org.apache.kafka.clients.consumer.KafkaConsumer&lt;String, String&gt; consumer = new org.apache.kafka.clients.consumer.KafkaConsumer&lt;String, String&gt;(props);
       
       consumer.subscribe(Arrays.asList(topic));
       System.out.println(&quot;Subscribed to topic &quot; + &quot;bench01&quot;);
@@ -424,7 +425,7 @@ long t = System.currentTimeMillis();
   p = new PrintStream(f);
   while (System.currentTimeMillis()&lt;end) 
   {
-      ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);
+      org.apache.kafka.clients.consumer.ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);
       for (ConsumerRecord&lt;String, String&gt; record : records)
      {
          p.println( &quot;offset = &quot; + record.offset() +&quot; value = &quot; + record.value());
