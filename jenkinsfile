@@ -28,6 +28,7 @@ stages {
    post {
         always {
             archiveArtifacts artifacts: '**/*.csv', fingerprint: true
+            archiveArtifacts artifacts: '**/*.log', fingerprint: true
         }
     }
 }
