@@ -32,12 +32,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="bootstrap.servers" elementType="Argument">
                 <stringProp name="Argument.name">bootstrap.servers</stringProp>
-                <stringProp name="Argument.value">ssp-kafka-headless:9092</stringProp>
+                <stringProp name="Argument.value">ssp-kafka-headless.strimzi-030.svc.cluster.local:9092</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="zookeeper.servers" elementType="Argument">
                 <stringProp name="Argument.name">zookeeper.servers</stringProp>
-                <stringProp name="Argument.value">ssp-zookeeper-headless:2181</stringProp>
+                <stringProp name="Argument.value">ssp-zookeeper-headless.strimzi-030.svc.cluster.local:2181</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
@@ -406,7 +406,7 @@
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="script">Properties props = new Properties();
-      props.put(&quot;bootstrap.servers&quot;, &quot;ssp-kafka-headless:9092&quot;);
+      props.put(&quot;bootstrap.servers&quot;, &quot;ssp-kafka-headless.strimzi-030.svc.cluster.local:9092&quot;);
       props.put(&quot;group.id&quot;, &quot;group&quot;);
       props.put(&quot;enable.auto.commit&quot;, &quot;true&quot;);
       props.put(&quot;auto.commit.interval.ms&quot;, &quot;1000&quot;);
