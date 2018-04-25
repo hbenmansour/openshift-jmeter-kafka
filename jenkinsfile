@@ -29,7 +29,7 @@ stages {
         always {
             archiveArtifacts artifacts: '**/*.csv', fingerprint: false
             archiveArtifacts artifacts: '**/*.log', fingerprint: false
-            archiveArtifacts artifacts: '**/reports', fingerprint: false
+            archiveArtifacts artifacts: '**/reports/**/*.*', fingerprint: false
             
         }
     }
