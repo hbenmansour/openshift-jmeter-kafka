@@ -371,7 +371,7 @@
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="script">Properties props = new Properties();
-      props.put(&quot;bootstrap.servers&quot;, &quot;ssp-kafka-headless.strimzi-030.svc.cluster.local:29092&quot;);
+      props.put(&quot;bootstrap.servers&quot;, &quot;ssp-kafka-headless.strimzi-030.svc.cluster.local:9092&quot;);
       props.put(&quot;group.id&quot;, &quot;group&quot;);
       props.put(&quot;enable.auto.commit&quot;, &quot;true&quot;);
       props.put(&quot;auto.commit.interval.ms&quot;, &quot;1000&quot;);
