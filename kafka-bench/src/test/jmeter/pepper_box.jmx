@@ -31,12 +31,12 @@
             <collectionProp name="Arguments.arguments">
               <elementProp name="bootstrap.servers" elementType="Argument">
                 <stringProp name="Argument.name">bootstrap.servers</stringProp>
-                <stringProp name="Argument.value">ssp-kafka-headless.strimzi-030.svc.cluster.local:9092</stringProp>
+                <stringProp name="Argument.value">localhost:29092</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="zookeeper.servers" elementType="Argument">
                 <stringProp name="Argument.name">zookeeper.servers</stringProp>
-                <stringProp name="Argument.value">ssp-zookeeper-headless.strimzi-030.svc.cluster.local:2181</stringProp>
+                <stringProp name="Argument.value">localhost:32181</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="kafka.topic.name" elementType="Argument">
@@ -173,11 +173,19 @@
           <stringProp name="placeHolder">MESSAGE</stringProp>
           <stringProp name="configClass">com.gslab.pepper.loadgen.impl.PlaintTextLoadGenerator</stringProp>
           <stringProp name="jsonSchema">{
-	&quot;messageId&quot;:{{SEQUENCE(&quot;messageId&quot;, 1, 1)}},
-	&quot;messageBody&quot;:&quot;{{RANDOM_ALPHA_NUMERIC(&quot;abcedefghijklmnopqrwxyzABCDEFGHIJKLMNOPQRWXYZ&quot;, 100)}}&quot;,
-	&quot;messageCategory&quot;:&quot;{{RANDOM_STRING(&quot;Finance&quot;, &quot;Insurance&quot;, &quot;Healthcare&quot;, &quot;Shares&quot;)}}&quot;,
-	&quot;messageStatus&quot;:&quot;{{RANDOM_STRING(&quot;Accepted&quot;,&quot;Pending&quot;,&quot;Processing&quot;,&quot;Rejected&quot;)}}&quot;,
-	&quot;messageTime&quot;:{{TIMESTAMP()}}
+    "meta": {
+        "version": 1
+    },
+    "content": {
+        "nbkeys": 1,
+        "keys": [
+            {
+                "ascii-key": "R2V2-FU:R/  {{RANDOM_ALPHA_NUMERIC("abcedefghijklmnopqrwxyzABCDEFGHIJKLMNOPQRWXYZ0123456789", 25)}}",
+                "actionString": "SetTTL",
+                "actionCode": 0
+            }
+        ]
+    }
 }</stringProp>
         </com.gslab.pepper.config.plaintext.PlainTextConfigElement>
         <hashTree/>
@@ -371,7 +379,7 @@
           <stringProp name="filename"></stringProp>
           <stringProp name="parameters"></stringProp>
           <stringProp name="script">Properties props = new Properties();
-      props.put(&quot;bootstrap.servers&quot;, &quot;ssp-kafka-headless.strimzi-030.svc.cluster.local:9092&quot;);
+      props.put(&quot;bootstrap.servers&quot;, &quot;localhost:29092&quot;);
       props.put(&quot;group.id&quot;, &quot;group&quot;);
       props.put(&quot;enable.auto.commit&quot;, &quot;true&quot;);
       props.put(&quot;auto.commit.interval.ms&quot;, &quot;1000&quot;);
