@@ -17,12 +17,12 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">4</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">25</stringProp>
         <longProp name="ThreadGroup.start_time">1487173362000</longProp>
         <longProp name="ThreadGroup.end_time">1487173362000</longProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">60</stringProp>
+        <stringProp name="ThreadGroup.duration">600</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
@@ -367,10 +367,10 @@
           <boolProp name="LoopController.continue_forever">false</boolProp>
           <stringProp name="LoopController.loops">5</stringProp>
         </elementProp>
-        <stringProp name="ThreadGroup.num_threads">4</stringProp>
-        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">25</stringProp>
         <boolProp name="ThreadGroup.scheduler">true</boolProp>
-        <stringProp name="ThreadGroup.duration">60</stringProp>
+        <stringProp name="ThreadGroup.duration">600</stringProp>
         <stringProp name="ThreadGroup.delay"></stringProp>
       </ThreadGroup>
       <hashTree>
@@ -393,12 +393,12 @@
       consumer.subscribe(Arrays.asList(topic));
       System.out.println(&quot;Subscribed to topic &quot; + &quot;bench01&quot;);
 long t = System.currentTimeMillis();
-  long end = t + 5000;
+  long end = t + 600000;
   f = new FileOutputStream(&quot;.\\data.csv&quot;, true);
   p = new PrintStream(f);
   while (System.currentTimeMillis()&lt;end) 
   {
-      org.apache.kafka.clients.consumer.ConsumerRecords&lt;String, String&gt; records = consumer.poll(100);
+      org.apache.kafka.clients.consumer.ConsumerRecords&lt;String, String&gt; records = consumer.poll(1000);
       for ( org.apache.kafka.clients.consumer.ConsumerRecord&lt;String, String&gt; record : records)
      {
          p.println( &quot;offset = &quot; + record.offset() +&quot; value = &quot; + record.value());
